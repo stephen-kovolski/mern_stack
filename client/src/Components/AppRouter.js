@@ -10,18 +10,18 @@ export default function AppRouter() {
     return (
         <Switch>
             <Route
-                exact path='/'
+                Route path='/' exact
             >
                 <Home />
             </Route>
             <Route
-                exact path='/login'
+                Route path='/login' exact
             >
 
                 <Login />
             </Route>
             <Route
-                exact path='Register'
+                Router path='Register' exact
             >
 
                 <Register />

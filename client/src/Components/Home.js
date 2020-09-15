@@ -11,11 +11,13 @@ export default function Home() {
                 Welcome
             </h1>
             <br/>
-            <a
-                href={loginLink}
-            >
+            <Button
+                onClick= {()=> {window.location = loginLink}}
+                text='Login to your Account'
+                style={{color: 'pink', background: 'black'}}
+                />
                 Login 
-            </a>
+            
             <a
                 href={regLink}
             >

@@ -1,8 +1,16 @@
 import React from 'react';
+import Button from './Button';
+
+import Form from './Form';
+
+import userInputs from '../utils/userInputs'
+import {loginReq} from '../utils/userRequests'
+
+
 
 export default function Login() {
 
-    const regLink = window.location.origin + "/register";
+    const regLink = "/register";
 
     return (
         <div>
@@ -10,12 +18,22 @@ export default function Login() {
                 Login to your account
             </h1>
             <br/>
-            <a
-                href={regLink}
+
+            <Form
+            id='loginForm'
+            input={userInputs}
+            title='Login'
+            submitFunc={}
+            />
             
-            >
-                Need an account?Register today
-            </a>
+
+
+            <Button
+                onCLick= {() => (window.location = regLink)}
+                text='Need an account an accout? Register Today'
+                style={{color: 'white', background: 'black'}}
+                />
+            
         </div>
     )
 
