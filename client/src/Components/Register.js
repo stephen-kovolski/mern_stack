@@ -1,9 +1,11 @@
 import React from 'react';
 import Button from './Button'
-
 import Form from './Form';
-import {reqInputs} from '../utils/userInputs'
-import {regReq} from '../utils/userRequests'
+import {regInputs} from '../utils/userInputs'
+const baseURL = 'http://localhost:5000';
+const {default: axios} = require('axios');
+
+
 
 export default function Register() {
 
@@ -19,7 +21,7 @@ export default function Register() {
             <Form 
                 id='registerForm'
                 title='Register'
-                inputs={reqInputs}
+                inputs={regInputs}
                 submitFunc={regReq}
             />
 
@@ -32,6 +34,45 @@ export default function Register() {
         </div>
     )
 
+}
+
+
+function regReq(form) {
+   
+        let reqBody = {};
+
+        for (const input of form) {
+
+            const val = input.value
+            if(val !== '') {
+                reqBody[input.name] = val
+            }
+        }     
+        
+        
+//frontend validation needed: [] make sure all fields are present, [] emailis an email, lengths of inputs (match schema)
+
+
+
+            const loginURL = `${baseURL}/user/login`;
+
+           console.log(reqBody)
+        
+    
+    axios.put(loginURL, reqBody)
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        if (err) {
+            console.log(err);
+        }
+    })
+    
+
+
+
+    
 }
 
 

@@ -2,9 +2,9 @@
   "name": "user-system",
   "version": "1.0.0",
   "description": "Rest API that will allow registration and loging in to a public client",
-  "main": "app.js",
+  "main": "server.js",
   "scripts": {
-    "start": "npm app.js"
+    "start": "node server.js"
   },
   "keywords": [],
   "author": "",

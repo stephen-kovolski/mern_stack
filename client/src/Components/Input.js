@@ -12,7 +12,7 @@ export default function Input(props) {                  //placeholder, typeof, o
             onChange={props.onChange}
             type={props.type}
             placeholder={props.ph}  //ph stands for place holder
-            style={{...defualtStyle, ...props.style}}
+            style={{...defaultStyle, ...props.style}}
 
         />
     )
@@ -20,7 +20,7 @@ export default function Input(props) {                  //placeholder, typeof, o
 
     const defaultStyle = {
         color: 'white',
-        backgroundColor: 'grey',
+        backgroundColor: 'light blue',
         border: 'none',
         padding: 10,
         borderRadius: 5,

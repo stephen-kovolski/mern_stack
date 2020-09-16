@@ -1,10 +1,12 @@
 
-const {default: axios} = require('axios');
-const baseURL = 'http://localhost:5000';
+
+
+
 
 module.exports = {
+
     loginReq: (form) => {
-        const reqData = {};
+        let reqBody = {};
 
         for (const input of form) {
 
@@ -45,24 +47,11 @@ module.exports = {
 
 
 
-    regReq: () => {
-    console.log(form)
+    regReq: (form) => {
+    console.log()
     }
             //all validation from before, plus make sure both password inputs match
 
 }
 
 
-// module.exports = {
-//     loginReq: (form) => {
-//         for (const input of form) {
-//             console.log(input.value)
-//         }
-//         console.log(this);
-//     },
-
-//     regReq: (form) => {
-//         console.log(this);
-//     }
-
-// }

@@ -21,7 +21,7 @@ export default function AppRouter() {
                 <Login />
             </Route>
             <Route
-                Router path='Register' exact
+                Router path='/register' exact
             >
 
                 <Register />

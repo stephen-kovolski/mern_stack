@@ -23,7 +23,7 @@ export default function Login() {
             id='loginForm'
             input={userInputs}
             title='Login'
-            submitFunc={}
+            submitFunc={loginReq}
             />
             
 
