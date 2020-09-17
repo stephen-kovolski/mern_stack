@@ -9,7 +9,7 @@ const {default: axios} = require('axios');
 
 export default function Register() {
 
-    const loginLink = "/login";
+    const loginLink = `${baseURL}/login`;
 
     return (
         <div>

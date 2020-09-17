@@ -2,6 +2,7 @@ import React from 'react';
 import Button from './Button';
 
 import Form from './Form';
+const baseURL = 'http://localhost:5000';
 
 import userInputs from '../utils/userInputs'
 import {loginReq} from '../utils/userRequests'
@@ -10,7 +11,7 @@ import {loginReq} from '../utils/userRequests'
 
 export default function Login() {
 
-    const regLink = "/register";
+    const regLink = `${baseURL}/register`;
 
     return (
         <div>
@@ -21,8 +22,8 @@ export default function Login() {
 
             <Form
             id='loginForm'
-            input={userInputs}
             title='Login'
+            input={loginInputs}
             submitFunc={loginReq}
             />
             
