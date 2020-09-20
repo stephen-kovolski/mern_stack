@@ -1,18 +1,17 @@
 import React from 'react';
 import Button from './Button';
-
 import Form from './Form';
-const baseURL = 'http://localhost:5000';
+import {loginInputs} from '../utils/userInputs';
 
-import userInputs from '../utils/userInputs'
-import {loginReq} from '../utils/userRequests'
-
+const baseURL = 'http://localhost:3000';
+const beURL = 'http://localhost:5000'
+const {default: axios} = require('axios');
 
 
 export default function Login() {
 
     const regLink = `${baseURL}/register`;
-
+console.log(loginInputs)
     return (
         <div>
             <h1>
@@ -23,19 +22,49 @@ export default function Login() {
             <Form
             id='loginForm'
             title='Login'
-            input={loginInputs}
+            inputs={loginInputs}
             submitFunc={loginReq}
             />
             
 
 
             <Button
-                onCLick= {() => (window.location = regLink)}
+                onClick= {() => {window.location = regLink}}
                 text='Need an account an accout? Register Today'
                 style={{color: 'white', background: 'black'}}
                 />
             
         </div>
     )
+
+}
+
+
+function loginReq(form) {
+    let reqBody = {};
+
+    //go through the form and get the UN
+    for (const input of form) {
+        const val = input.value
+        if (val != '') {
+            reqBody[input.name] = val
+        }
+    }
+
+
+
+
+        const loginURL = `${beURL}/user/login`;
+
+
+    axios.put(loginURL, reqBody)
+    .then(res => {
+        console.log(res)
+    })
+    .catch(err => {
+        if (err) {
+            console.log(err)
+        }
+    })
 
 }

@@ -86,7 +86,7 @@ const validate = async (req, res, next) => {
         req.userData = {
             email: e,
             username: u,
-            password: p,
+            password: await bcrypt.hash(p, 7),
         }
         next()
 

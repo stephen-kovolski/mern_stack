@@ -4,7 +4,7 @@ import { Switch, Route } from 'react-router-dom'
 
 import Home from './Home'
 import Register from './Register'
-import Login from './Home'
+import Login from './Login'
 
 export default function AppRouter() {
     return (

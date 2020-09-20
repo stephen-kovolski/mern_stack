@@ -19,9 +19,10 @@ export default function Form(props) {
         >
             {
                     Array.isArray(props.inputs) ?
-                    props.inputs.map(inProps => {
+                    props.inputs.map((inProps, index ) => {
                         return(
                             <Input
+                                key={index}
                                 name={inProps.name}
                                 ph={inProps.ph}
                                 type={inProps.type}

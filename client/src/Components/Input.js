@@ -6,7 +6,7 @@ export default function Input(props) {                  //placeholder, typeof, o
     return (
         <input 
 
-
+            key={props.name}
             id={props.id}
             name={props.name}
             onChange={props.onChange}

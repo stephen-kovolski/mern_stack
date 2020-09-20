@@ -12,7 +12,7 @@ module.exports = async (req, res, next) => {
     
     const { credential, password} = req.body;
 
-    if(credentials == undefined || password == undefined) {
+    if(credential == undefined || password == undefined) {
         return res.status(400).json({error: 'One or more required values are undefined.'})
     }
 

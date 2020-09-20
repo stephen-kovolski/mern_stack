@@ -2,7 +2,9 @@ import React from 'react';
 import Button from './Button'
 import Form from './Form';
 import {regInputs} from '../utils/userInputs'
-const baseURL = 'http://localhost:5000';
+const baseURL = 'http://localhost:3000';
+const beURL = 'http://localhost:5000'
+
 const {default: axios} = require('axios');
 
 
@@ -27,7 +29,7 @@ export default function Register() {
 
 
             <Button
-                onCLick= {() => (window.location) = loginLink}
+                onClick= {() => {window.location = loginLink}}
                 text='Already have an accout? Log In'
                 style={{color: 'purple', background: 'grey'}}
                 />
@@ -54,12 +56,12 @@ function regReq(form) {
 
 
 
-            const loginURL = `${baseURL}/user/login`;
+            const regURL = `${beURL}/user/register`;
 
            console.log(reqBody)
         
     
-    axios.put(loginURL, reqBody)
+    axios.post(regURL, reqBody)
     .then(res => {
         console.log(res)
     })
