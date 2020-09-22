@@ -1,5 +1,5 @@
 import React from 'react';
-import Button from './Button'
+import Button from './Button';
 
 
 
@@ -11,7 +11,7 @@ export default function Home() {
     return (
         <div>
             <h1>
-                Welcome
+                Welcome To The Site
             </h1>
             <br/>
             <Button
@@ -19,13 +19,15 @@ export default function Home() {
                 text='Login to your Account'
                 style={{color: 'pink', background: 'black'}}
                 />
-                Login 
+                 
+                <br/>
+            <Button
+                onClick= {()=> {window.location = regLink}}
+                text='Register your Account'
+                style={{color: 'pink', background: 'black'}}
+                />
+                
             
-            <a
-                href={regLink}
-            >
-                Register
-            </a>
         </div>
     )
 
