@@ -6,7 +6,7 @@ import Home from './Home'
 import Register from './Register'
 import Login from './Login'
 import useTheme from '../hooks/useTheme'
-
+import Control from './Control'
 
 
 export default function AppRouter() {
@@ -20,7 +20,7 @@ export default function AppRouter() {
             </h1>
             <button
             onClick={() => {
-                setTheme(prevTheme => {return != prevTheme})
+                setTheme(prevTheme => {return !prevTheme})
             }}
             >
                 {!theme ? 'Switch to Light Mode' : 'Switch to Dark Mode'}
@@ -35,16 +35,13 @@ export default function AppRouter() {
             <Route
                 Route path='/login' exact
             >
-
                 <Login />
             </Route>
             <Route
                 Router path='/register' exact
             >
-
                 <Register />
             </Route>
-
             <Route
             path='/'
             >
@@ -53,11 +50,8 @@ export default function AppRouter() {
                         Error: 404
                     </h1>
                 </div>
-                </div>
-
             </Route>
-
-
         </Switch>
+        </div>
     )
 }

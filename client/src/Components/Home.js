@@ -1,5 +1,6 @@
 import React from 'react';
 import Button from './Button';
+import {useTheme} from '../hooks/ThemeContext'
 
 
 
@@ -10,9 +11,15 @@ export default function Home() {
 
     return (
         <div>
+
+        
+
             <h1>
                 Welcome To The Site
             </h1>
+            <h2>
+                {useTheme() ? 'Light Mode' : 'Dark Mode'}
+            </h2>
             <br/>
             <Button
                 onClick= {()=> {window.location = loginLink}}

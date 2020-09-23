@@ -4,6 +4,8 @@ import { BrowserRouter } from 'react-router-dom';
 
 import AppRouter from './AppRouter';
 
+import {ThemeProvider} from '../hooks/ThemeContext'
+
 
 function App() {
 
@@ -16,6 +18,7 @@ function App() {
 
   return (
     <BrowserRouter>
+    <ThemeProvider>
     {<button
     onClick={() => {
       setTheme( prevTheme => {return !prevTheme})
@@ -24,6 +27,7 @@ function App() {
         Change Theme
       </button>}
     <AppRouter />
+    </ThemeProvider>
     </BrowserRouter>
   );
 }

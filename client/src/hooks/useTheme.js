@@ -1,11 +1,11 @@
 import React, {useState, useEffect} from 'react';
 import {get, set} from '../utils/localStorage';
 
-export default useTheme = (initialVal) => {
+export default (initialVal) => {
 
     const [theme, setTheme] = useState( () => {
 
-        return get ['theme', setTheme]
+        return initialVal
 
     })
 
@@ -20,10 +20,3 @@ export default useTheme = (initialVal) => {
 
 }
 
-function get (key) {
-
-}
-
-function set (key, value) {
-
-}
