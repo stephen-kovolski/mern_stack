@@ -24,6 +24,8 @@ export function ThemeProvider({children}) {
     useEffect( () => {
         set('theme', JSON.stringify(theme))
 
+        document.getElementById('root').style.backgroundColor = theme ? 'white' : 'black';
+
         console.log("the theme changed")
 
     }, [theme])
